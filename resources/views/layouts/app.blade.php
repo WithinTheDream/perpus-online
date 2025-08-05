@@ -144,5 +144,19 @@
             }
         });
     </script>
+    <script>
+    function openModal(bookId) {
+        const modal = document.getElementById('deleteModal');
+        const form = document.getElementById('deleteForm');
+        form.action = `/books/${bookId}`;
+        modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('deleteModal');
+        modal.classList.add('hidden');
+    }
+</script>
+
 </body>
 </html>
