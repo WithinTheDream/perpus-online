@@ -88,14 +88,12 @@
                 <i class="fas fa-check-circle"></i> Mark as Returned
             </a>
         @endif
-        <form action="{{ route('borrowing.destroy', $borrowing) }}" method="POST" onsubmit="return confirm('Delete this record?');">
-            @csrf
-            @method('DELETE')
-            <button type="submit"
-                    class="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">
-                <i class="fas fa-trash"></i> Delete
-            </button>
-        </form>
+          <!-- Trigger Modal -->
+        <button 
+            onclick="openModal('{{ route('borrowing.destroy', $borrowing->id) }}', 'Yakin ingin menghapus data peminjaman oleh <strong>{{ $borrowing->member->name }}</strong>?', 'Batalkan Peminjaman')" 
+            class="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">
+            <i class="fas fa-trash-alt"></i> Hapus
+        </button>
     </div>
 </div>
 @endsection
