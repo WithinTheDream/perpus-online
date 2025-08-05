@@ -89,30 +89,10 @@
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Trigger Modal -->
-                                    <button type="button" onclick="openModal('{{ $book->id }}')" class="text-red-600 hover:text-red-900">
-                                        <i class="fas fa-trash"></i>
+                                    <button onclick="openModal('{{ route('books.destroy', $book->id) }}', 'Apakah Anda yakin ingin menghapus buku <strong>{{ $book->title }}</strong>? Tindakan ini <span class=\'text-red-500 font-medium\'>tidak dapat dibatalkan</span>.', 'Hapus Buku')" class="text-red-600">
+                                        <i class="fas fa-trash-alt"></i>
                                     </button>
-                                    <!-- Modal Konfirmasi Hapus -->
-                                    <div id="deleteModal" class="fixed inset-0 z-50 flex items-center text-center justify-center bg-black bg-opacity-50 hidden">
-                                        <div class="bg-white p-6 rounded-lg shadow-xl max-w-md w-full animate-fade-in">
-                                            <div class="flex items-center mb-4">
-                                                <i class="fas fa-trash-alt text-red-500 text-xl mr-2"></i>
-                                                <h2 class="text-xl font-semibold text-gray-800">Konfirmasi Hapus</h2>
-                                            </div>
-                                            <p class="text-gray-600 mb-6">Apakah Anda yakin ingin menghapus buku ini?<br> Tindakan ini <span class="text-red-500 font-medium">tidak dapat dibatalkan</span>.</p>
-                                            
-                                            <form id="deleteForm" method="POST" class="flex justify-end space-x-3">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="button" onclick="closeModal()" class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-700">
-                                                    Batal
-                                                </button>
-                                                <button type="submit" class="px-4 py-2 rounded bg-red-600 hover:bg-red-700 text-white font-medium flex items-center">
-                                                    <i class="fas fa-trash-alt mr-2"></i> Hapus
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
+
 
                                 </div>
                             </td>

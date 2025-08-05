@@ -114,9 +114,12 @@
                 @endif
 
                 @yield('content')
+                    {{--  modal global --}}
+                @include('components.delete-modal')
             </main>
         </div>
     </div>
+    
 
     <!-- Mobile sidebar overlay -->
     <div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
@@ -144,17 +147,29 @@
             }
         });
     </script>
-    <script>
-    function openModal(bookId) {
+    {{-- Script JS Umum --}}
+<script>
+    /**
+     * Buka modal konfirmasi universal.
+     * @param {string} route - URL form action.
+     * @param {string} message - Pesan utama modal.
+     * @param {string} title - Judul modal (opsional).
+     */
+    function openModal(route, message = 'Apakah Anda yakin ingin melanjutkan tindakan ini?', title = 'Konfirmasi') {
         const modal = document.getElementById('deleteModal');
         const form = document.getElementById('deleteForm');
-        form.action = `/books/${bookId}`;
+        const msg = document.getElementById('deleteModalMessage');
+        const modalTitle = document.getElementById('modalTitle');
+
+        form.action = route;
+        msg.innerHTML = message;
+        modalTitle.innerText = title;
+
         modal.classList.remove('hidden');
     }
 
     function closeModal() {
-        const modal = document.getElementById('deleteModal');
-        modal.classList.add('hidden');
+        document.getElementById('deleteModal').classList.add('hidden');
     }
 </script>
 
