@@ -36,6 +36,7 @@ class MemberController extends Controller
             'email' => 'required|email|unique:members',
             'phone' => 'nullable|string|max:20',
             'address' => 'nullable|string',
+            'job_status' => 'required|in:masyarakat,siswa,guru',
             'join_date' => 'required|date'
         ]);
 
@@ -62,6 +63,7 @@ class MemberController extends Controller
             'email' => 'required|email|unique:members,email,' . $member->id,
             'phone' => 'nullable|string|max:20',
             'address' => 'nullable|string',
+            'job_status' => 'required|in:masyarakat,siswa,guru',
             'status' => 'required|in:active,inactive'
         ]);
 

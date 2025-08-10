@@ -42,14 +42,14 @@
             
             <!-- Right Column -->
             <div>
-                <div class="mb-4">
+                {{-- <div class="mb-4">
                     <label for="member_id" class="block text-sm font-medium text-gray-700 mb-1">ID Anggota</label>
                     <input type="text" name="member_id" id="member_id" value="{{ old('id', $member->id) }}" required
                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                     @error('member_id')
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                     @enderror
-                </div>
+                </div> --}}
                 
                 <div class="mb-4">
                     <label for="join_date" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Bergabung</label>
@@ -60,6 +60,19 @@
                     @enderror
                 </div>
                 
+                <div class="mb-4">
+                    <label for="status" class="block text-sm font-medium text-gray-700 mb-1">Status Anggota</label>
+                    <select name="job_status" id="job_status" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="masyarakat" {{ old('job_status', $member->job_status) == 'masyarakat' ? 'selected' : '' }}>Masyarakat</option>
+                        <option value="guru" {{ old('job_status', $member->job_status) == 'guru' ? 'selected' : '' }}>Guru</option>
+                        <option value="siswa" {{ old('job_status', $member->job_status) == 'siswa' ? 'selected' : '' }}>Siswa</option>
+                    </select>
+                    @error('job_status')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 <div class="mb-4">
                     <label for="status" class="block text-sm font-medium text-gray-700 mb-1">Status Keanggotaan</label>
                     <select name="status" id="status" required

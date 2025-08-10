@@ -52,6 +52,16 @@
                 </div>
                 
                 <div class="mb-4">
+                    <label for="job_status" class="block text-gray-700 font-semibold mb-2">Status Anggota</label>
+                    <select name="job_status" id="job_status" class="border border-gray-300 rounded px-3 py-2 w-full" required>
+                        <option value="masyarakat">Masyarakat</option>
+                        <option value="siswa">Siswa</option>
+                        <option value="guru">Guru</option>
+                    </select>
+                </div>
+
+
+                <div class="mb-4">
                     <label for="status" class="block text-sm font-medium text-gray-700 mb-1">Status Keanggotaan</label>
                     <select name="status" id="status" required
                         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">

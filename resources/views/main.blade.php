@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="{{ asset('covers/1753603806_puspa.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('grid-gallery/puspa.png')}}" title="books icons">
     <style>
         html {
             scroll-behavior: smooth;
@@ -339,20 +339,12 @@
              x-transition:enter-end="opacity-100"
              x-transition:leave="transition ease-in duration-200"
              x-transition:leave-start="opacity-100"
-             x-transition:leave-end="opacity-0"
-             class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 lightbox-overlay"
+             x-transition:leave-end="opacity-0"class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 lightbox-overlay"
              @click="lightboxOpen = false"
              @keydown.escape.window="lightboxOpen = false">
             
             <div class="relative max-w-4xl max-h-full p-4" @click.stop>
-                <img :src="currentImage" alt="Lightbox Image" 
-                     class="max-w-full max-h-full object-contain rounded-lg">
-                
-                <!-- Close Button -->
-                <button @click="lightboxOpen = false"
-                        class="absolute top-4 right-4 text-white hover:text-gray-300 text-2xl">
-                    <i class="fas fa-times"></i>
-                </button>
+                <img :src="currentImage" 
                 
                 <!-- Navigation Buttons -->
                 <button @click="currentImageIndex = currentImageIndex === 0 ? 5 : currentImageIndex - 1; currentImage = $el.closest('[x-data]').__x.$data.images[currentImageIndex].src"
@@ -465,9 +457,8 @@
                         </div>
                         <h4 class="font-semibold text-gray-800 mb-2">Alamat</h4>
                         <p class="text-gray-600 text-sm">
-                            Jl. Merdeka No. 123<br>
-                            Desa Sukamaju<br>
-                            Kec. Sejahtera
+                            Jl. Raya Mayong - Pancur, Kajok RT 21 RW 04 Pancur,<br>
+                            Kec. Mayong, Kabupaten Jepara, Jawa Tengah 59465        
                         </p>
                     </div>
 
@@ -478,8 +469,7 @@
                         </div>
                         <h4 class="font-semibold text-gray-800 mb-2">Telepon</h4>
                         <p class="text-gray-600 text-sm">
-                            (021) 123-4567<br>
-                            (021) 123-4568
+                            +6282242962952<br>
                         </p>
                     </div>
 
@@ -550,14 +540,11 @@
                     <div>
                         <h5 class="font-semibold mb-4">Ikuti Kami</h5>
                         <div class="flex space-x-4">
-                            <a href="#" class="text-green-100 hover:text-white transition duration-300">
+                            <a href="https://www.facebook.com/p/Perpustakaan-Desa-Pancur-100069656360735/" class="text-green-100 hover:text-white transition duration-300">
                                 <i class="fab fa-facebook-f text-xl"></i>
                             </a>
-                            <a href="#" class="text-green-100 hover:text-white transition duration-300">
+                            <a href="https://www.instagram.com/perpustakaanpuspa/" class="text-green-100 hover:text-white transition duration-300">
                                 <i class="fab fa-instagram text-xl"></i>
-                            </a>
-                            <a href="#" class="text-green-100 hover:text-white transition duration-300">
-                                <i class="fab fa-youtube text-xl"></i>
                             </a>
                         </div>
                     </div>

@@ -6,7 +6,8 @@
     <title>@yield('title', 'Kelola Perpustakaan')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{{ asset('books.png')}}" title="books icons">
+    <link rel="icon" type="image/x-icon" href="{{ asset('grid-gallery/puspa.png')}}" title="books icons">
+    
 
     <script>
         tailwind.config = {

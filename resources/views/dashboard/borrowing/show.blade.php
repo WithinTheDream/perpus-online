@@ -32,14 +32,17 @@
                 <div>
                     <h2 class="text-lg font-semibold">{{ $borrowing->book->title }}</h2>
                     <p class="text-sm text-gray-600">{{ $borrowing->book->author }}</p>
-                </div>
+                </div><hr>
                 <div>
                     <h3 class="font-medium">Peminjam</h3>
-                    <p class="text-gray-700">{{ $borrowing->member->name }}</p>
-                    <p class="text-gray-500 text-sm">{{ $borrowing->member->email ?? '' }}</p>
-                </div>
+                    <p class="text-gray-700">{{ $borrowing->member->name }}</p><hr>
+                    <p class="text-gray-700">
+                            <strong>Status Anggota </strong> <br/>{{ ucfirst($borrowing->member->job_status) }}
+                    </p><hr>
+                    <p class="text-gray-500"> <strong>No. Hp & Email </strong><br> {{ $borrowing->member->phone ?? '' }}<br/> {{ $borrowing->member->email ?? '' }}</p>
+                </div><hr>
                 <div>
-                    <h3 class="font-medium">Status</h3>
+                    <h3 class="font-medium">Status Pengembalian</h3>
                     <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full 
                         bg-{{ $borrowing->status == 'dikembalikan' ? 'emerald' : ($borrowing->status == 'terlambat' ? 'red' : 'blue') }}-100 
                         text-{{ $borrowing->status == 'dikembalikan' ? 'emerald' : ($borrowing->status == 'terlambat' ? 'red' : 'blue') }}-600">
